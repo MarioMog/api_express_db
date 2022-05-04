@@ -63,6 +63,43 @@ const prisma = new PrismaClient()
       },
     })
     console.log('Create 6 explorers')
+
+    const woopa10 = await prisma.explorer2.upsert({
+      where: { name: 'Woopa 10' },
+      update: {},
+      create: {
+        name: 'Woopa 10',
+        lang: 'es',
+        missionCommander: 'Carlo',
+        enrollments: 1,
+        hasCertification: true,
+      },
+    })
+
+    const woopa11 = await prisma.explorer2.upsert({
+      where: { name: 'Woopa 11' },
+      update: {},
+      create: {
+        name: 'Woopa 11',
+        lang: 'en',
+        missionCommander: 'Carlo',
+        enrollments: 5,
+        hasCertification: false,
+      },
+    })
+
+    const woopa12 = await prisma.explorer2.upsert({
+      where: { name: 'Woopa 12' },
+      update: {},
+      create: {
+        name: 'Woopa 12',
+        lang: 'es',
+        missionCommander: 'Fernanda',
+        enrollments: 4,
+        hasCertification: true,
+      },
+    })
+    console.log('Create 3 explorers2')
   } catch (e) {
     console.error(e)
     process.exit(1)
